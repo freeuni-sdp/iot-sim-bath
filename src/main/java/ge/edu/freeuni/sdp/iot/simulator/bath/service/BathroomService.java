@@ -8,9 +8,7 @@ import javax.ws.rs.core.MediaType;
 
 public class BathroomService {
 
-<<<<<<< HEAD
 
-=======
     @POST
     @Path("/light-switch")
     @Consumes({MediaType.APPLICATION_JSON})
@@ -22,5 +20,16 @@ public class BathroomService {
             Bathroom.getInstance().turnLightOff();
         }
     }
->>>>>>> 0c1e898dfc032a39b0c4341cc8b950c38df481a7
+
+    @POST
+    @Path("/")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public void switchLight(final LightSwitchPostRequest request) {
+        if (request.status.equals("ON")) {
+            Bathroom.getInstance().turnLightOn();
+        }
+        else if (request.status.equals("OFF")) {
+            Bathroom.getInstance().turnLightOff();
+        }
+    }
 }
