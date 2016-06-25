@@ -1,15 +1,16 @@
 package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
-/**
- * Created by Babalah on 6/24/2016.
- */
 public class LightSwitch {
 
-    public static void on(String houseId) {
+    public LightSwitch() {
+
+    }
+
+    public void lightOn(String houseId) {
         //TODO send post request to https://iot-bath-light-sensor.herokuapp.com/
     }
 
-    public static void off(String houseId) {
+    public void lightOff(String houseId) {
         //TODO send post request to https://iot-bath-light-sensor.herokuapp.com/
     }
 }
