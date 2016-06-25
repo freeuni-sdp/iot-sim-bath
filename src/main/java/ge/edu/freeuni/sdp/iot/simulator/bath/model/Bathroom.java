@@ -5,11 +5,14 @@ public class Bathroom {
     private String houseId;
     private LightSwitch lightSwitch;
     private HumiditySensor humiditySensor;
+    private VentSwitch ventSwitch;
 
-    public Bathroom(String houseId, LightSwitch lightSwitch, HumiditySensor humiditySensor) {
+    public Bathroom(String houseId, LightSwitch lightSwitch,
+                    HumiditySensor humiditySensor, VentSwitch ventSwitch) {
         this.houseId = houseId;
         this.lightSwitch = lightSwitch;
         this.humiditySensor = humiditySensor;
+        this.ventSwitch = ventSwitch;
     }
 
     public void turnLightOn() {
@@ -22,11 +25,11 @@ public class Bathroom {
     }
 
     public void turnVentOn() {
-        // TODO vent reaction
+        ventSwitch.ventOn();
         humiditySensor.decreaseHumidity(houseId);
     }
 
     public void turnVentOff() {
-        // TODO vent reaction
+        ventSwitch.ventOff();
     }
 }
