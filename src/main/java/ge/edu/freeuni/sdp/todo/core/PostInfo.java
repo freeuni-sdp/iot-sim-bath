@@ -7,7 +7,7 @@ import javax.ws.rs.Path;
 /**
  * Created by Babalah on 6/25/2016.
  */
-@Path("status")
+@Path("status") //TODO change "status" to relevant path
 public class PostInfo {
 
     @POST
