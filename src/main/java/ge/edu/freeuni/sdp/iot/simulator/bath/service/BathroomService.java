@@ -21,15 +21,4 @@ public class BathroomService {
         }
     }
 
-    @POST
-    @Path("/")
-    @Consumes({MediaType.APPLICATION_JSON})
-    public void switchLight(final LightSwitchPostRequest request) {
-        if (request.status.equals("ON")) {
-            Bathroom.getInstance().turnLightOn();
-        }
-        else if (request.status.equals("OFF")) {
-            Bathroom.getInstance().turnLightOff();
-        }
-    }
 }
