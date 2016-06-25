@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.iot.simulator.bath;
+package ge.edu.freeuni.sdp.iot.simulator.bath.jaxb;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
