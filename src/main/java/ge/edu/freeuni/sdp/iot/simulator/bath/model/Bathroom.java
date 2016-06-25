@@ -2,31 +2,28 @@ package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
 public class Bathroom {
 
-    private String houseId;
     private LightSwitch lightSwitch;
     private HumiditySensor humiditySensor;
     private VentSwitch ventSwitch;
 
-    public Bathroom(String houseId, LightSwitch lightSwitch,
-                    HumiditySensor humiditySensor, VentSwitch ventSwitch) {
-        this.houseId = houseId;
+    public Bathroom(LightSwitch lightSwitch, HumiditySensor humiditySensor, VentSwitch ventSwitch) {
         this.lightSwitch = lightSwitch;
         this.humiditySensor = humiditySensor;
         this.ventSwitch = ventSwitch;
     }
 
     public void turnLightOn() {
-        lightSwitch.lightOn(houseId);
-        humiditySensor.increaseHumidity(houseId);
+        lightSwitch.lightOn();
+        humiditySensor.increaseHumidity();
     }
 
     public void turnLightOff() {
-        lightSwitch.lightOff(houseId);
+        lightSwitch.lightOff();
     }
 
     public void turnVentOn() {
         ventSwitch.ventOn();
-        humiditySensor.decreaseHumidity(houseId);
+        humiditySensor.decreaseHumidity();
     }
 
     public void turnVentOff() {
