@@ -1,4 +1,4 @@
-import ge.edu.freeuni.sdp.todo.core.PingService;
+import ge.edu.freeuni.sdp.iot.simulator.bath.service.PingService;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;

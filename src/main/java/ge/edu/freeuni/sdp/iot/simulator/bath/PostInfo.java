@@ -1,4 +1,6 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.iot.simulator.bath;
+
+import ge.edu.freeuni.sdp.iot.simulator.bath.model.Human;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;

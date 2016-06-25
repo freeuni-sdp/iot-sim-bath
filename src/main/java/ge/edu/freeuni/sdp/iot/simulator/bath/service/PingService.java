@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.iot.simulator.bath.service;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;

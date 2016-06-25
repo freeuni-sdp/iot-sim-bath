@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.todo.core;
+package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
 /**
  * Created by Babalah on 6/24/2016.
