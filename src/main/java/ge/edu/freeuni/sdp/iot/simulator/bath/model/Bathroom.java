@@ -13,18 +13,20 @@ public class Bathroom {
     }
 
     public void turnLightOn() {
-
+        lightSwitch.lightOn(houseId);
+        humiditySensor.increaseHumidity(houseId);
     }
 
     public void turnLightOff() {
-
+        lightSwitch.lightOff(houseId);
     }
 
     public void turnVentOn() {
-
+        // TODO vent reaction
+        humiditySensor.decreaseHumidity(houseId);
     }
 
     public void turnVentOff() {
-
+        // TODO vent reaction
     }
 }
