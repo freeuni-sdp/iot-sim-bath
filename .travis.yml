@@ -1,1 +1,6 @@
 language: java
+
+deploy:
+   provider: heroku
+   api_key: "a8d91601-94e0-41bb-9827-64308366763f"
+   app: iot-sim-bath
