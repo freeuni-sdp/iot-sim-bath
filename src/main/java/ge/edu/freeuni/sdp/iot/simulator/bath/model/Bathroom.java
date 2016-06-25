@@ -32,4 +32,8 @@ public class Bathroom {
     public void turnVentOff() {
         ventSwitch.ventOff();
     }
+
+    public String getStatus() {
+        return ventSwitch.getStatus();
+    }
 }
