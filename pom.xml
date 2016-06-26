@@ -3,16 +3,16 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>ge.edu.freeuni.sdp.todo.core</groupId>
-	<artifactId>todo-core</artifactId>
+	<groupId>ge.edu.freeuni.sdp.iot.simulator.bath</groupId>
+	<artifactId>iot-sim-bath</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>todo-core</name>
+	<name>iot-sim-bath</name>
 
 	<build>
 		<testSourceDirectory>test</testSourceDirectory>
 
-		<finalName>todo-core</finalName>
+		<finalName>iot-sim-bath</finalName>
 		<plugins>
 
 			<plugin>
