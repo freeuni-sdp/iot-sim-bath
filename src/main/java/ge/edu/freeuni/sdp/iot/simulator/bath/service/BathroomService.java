@@ -24,18 +24,5 @@ public class BathroomService {
         }
     }
 
-    @GET
-    public Response get(@PathParam("houseid") String mode) {
-//        VentSwitchPostRequest request = new VentSwitchPostRequest();
-//
-//        if (mode.equals("ON")) {
-//            Bathroom.getInstance().turnVentOn();
-//        }
-//        else if (mode.equals("OFF")) {
-//            Bathroom.getInstance().turnVentOff();
-//        }
-//        request.status = "ok";
 
-        return Response.ok().build();
-    }
 }
