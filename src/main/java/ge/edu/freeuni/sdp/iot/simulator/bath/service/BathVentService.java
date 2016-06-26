@@ -10,7 +10,7 @@ import javax.ws.rs.core.Response;
 /**
  * Created by mi.maghriani on 6/26/2016.
  */
-@Path("/change_mode/mode")
+@Path("/change_mode/{mode}")
 @Produces({MediaType.APPLICATION_JSON})
 public class BathVentService {
     @GET
