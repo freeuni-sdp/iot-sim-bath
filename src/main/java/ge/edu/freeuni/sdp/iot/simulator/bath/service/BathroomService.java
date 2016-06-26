@@ -9,13 +9,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
-@Path("/house/{houseid}")
 public class BathroomService {
 
 
     @POST
-//    @Path("/light-switch")
-//    @Consumes({MediaType.APPLICATION_JSON})
+    @Path("/light-switch")
+    @Consumes({MediaType.APPLICATION_JSON})
     public void switchLight(final LightSwitchPostRequest request) {
         if (request.status.equals("ON")) {
             Bathroom.getInstance().turnLightOn();
