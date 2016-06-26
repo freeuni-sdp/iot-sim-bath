@@ -23,6 +23,7 @@ public class BathVentService {
         else if (mode.equals("OFF")) {
             Bathroom.getInstance().turnVentOff();
         }
+
         request.status = "ok";
 
         return Response.ok().build();
