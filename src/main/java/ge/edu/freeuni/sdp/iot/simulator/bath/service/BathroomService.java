@@ -22,10 +22,11 @@ public class BathroomService {
         }
     }
 
-    @POST
+    @GET
     @Path("/change_mode/mode")
     @Consumes({MediaType.APPLICATION_JSON})
-    public VentSwitchPostRequest post(@PathParam("change_mode") String houseid) {
+    @Produces( { MediaType.APPLICATION_JSON})
+    public VentSwitchPostRequest get(@PathParam("change_mode") String houseid) {
         VentSwitchPostRequest request = new VentSwitchPostRequest();
         request.status = "ok";
 
