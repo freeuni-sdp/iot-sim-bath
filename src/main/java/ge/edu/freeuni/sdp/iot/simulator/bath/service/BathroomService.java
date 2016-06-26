@@ -6,7 +6,7 @@ import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-
+@Path("/bath")
 public class BathroomService {
 
     @POST
