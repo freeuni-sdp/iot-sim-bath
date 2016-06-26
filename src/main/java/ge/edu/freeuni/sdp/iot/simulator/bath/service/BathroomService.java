@@ -26,7 +26,7 @@ public class BathroomService {
     }
 
     @GET
-    public Response get(@PathParam("change_mode") String mode) {
+    public Response get(@PathParam("houseid") String mode) {
 //        VentSwitchPostRequest request = new VentSwitchPostRequest();
 //
 //        if (mode.equals("ON")) {
