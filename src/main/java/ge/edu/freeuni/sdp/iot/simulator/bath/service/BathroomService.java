@@ -11,7 +11,6 @@ import javax.ws.rs.core.Response;
 
 public class BathroomService {
 
-
     @POST
     @Path("/light-switch")
     @Consumes({MediaType.APPLICATION_JSON})
@@ -23,7 +22,7 @@ public class BathroomService {
             Bathroom.getInstance().turnLightOff();
         }
     }
-
+    
     @GET
     public Response get(@PathParam("houseid") String mode) {
 //        VentSwitchPostRequest request = new VentSwitchPostRequest();
