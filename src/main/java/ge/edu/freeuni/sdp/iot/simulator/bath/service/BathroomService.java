@@ -25,13 +25,10 @@ public class BathroomService {
     @POST
     @Path("/change_mode")
     @Consumes({MediaType.APPLICATION_JSON})
-    public void switchVent(final VentSwitchPostRequest request) {
-        if (request.status.equals("on")) {
-            Bathroom.getInstance().turnVentOn();
-        }
+    public VentSwitchPostRequest switchVent(@PathParam("house_id") String houseid) {
+        VentSwitchPostRequest request = new VentSwitchPostRequest();
+        request.status = "ok";
 
-        else if (request.status.equals("off")) {
-            Bathroom.getInstance().turnVentOff();
-        }
+        return request;
     }
 }
