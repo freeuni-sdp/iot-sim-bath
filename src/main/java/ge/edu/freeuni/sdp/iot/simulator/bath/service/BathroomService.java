@@ -6,6 +6,7 @@ import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 public class BathroomService {
 
@@ -25,11 +26,17 @@ public class BathroomService {
     @GET
     @Path("/change_mode/mode")
     @Consumes({MediaType.APPLICATION_JSON})
-    @Produces( { MediaType.APPLICATION_JSON})
-    public VentSwitchPostRequest get(@PathParam("change_mode") String houseid) {
-        VentSwitchPostRequest request = new VentSwitchPostRequest();
-        request.status = "ok";
+    public Response post(@PathParam("change_mode") String mode) {
+//        VentSwitchPostRequest request = new VentSwitchPostRequest();
+//
+//        if (mode.equals("ON")) {
+//            Bathroom.getInstance().turnVentOn();
+//        }
+//        else if (mode.equals("OFF")) {
+//            Bathroom.getInstance().turnVentOff();
+//        }
+//        request.status = "ok";
 
-        return request;
+        return Response.ok().build();
     }
 }
