@@ -32,7 +32,7 @@ public class BathroomService {
     public VentSwitch switchVent(@PathParam("action") String action) {
         VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
 
-        if (action.toLowerCase().equals("no")) {
+        if (action.toLowerCase().equals("on")) {
             Bathroom.getInstance().turnVentOn();
             return ventSwitch;
         }
