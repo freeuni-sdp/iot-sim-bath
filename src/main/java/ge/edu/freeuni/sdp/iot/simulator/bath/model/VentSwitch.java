@@ -19,11 +19,12 @@ public class VentSwitch {
     private String houseid;
 
     @XmlElement
-    private boolean succeed = true;
+    private boolean succeed;
 
     public VentSwitch(String houseid) {
         this.houseid = houseid;
         status = "off";
+        succeed = true;
     }
 
     public String getHouseid() {

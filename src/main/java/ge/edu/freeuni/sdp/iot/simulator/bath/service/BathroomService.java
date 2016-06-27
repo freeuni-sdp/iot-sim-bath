@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/bath")
-@Consumes({MediaType.APPLICATION_JSON})
+@Produces({MediaType.APPLICATION_JSON})
 public class BathroomService {
 
     @POST
@@ -28,21 +28,24 @@ public class BathroomService {
     }
 
     @POST
-    @Path("/vent-switch")
-    public Response switchVent(final VentSwitchPostRequest request) {
-        if (request.getStatus().equals("ON")) {
+    @Path("/vent-switch/{action}")
+    public VentSwitch switchVent(@PathParam("action") String action) {
+        VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
+
+        if (action.equals("ON")) {
             Bathroom.getInstance().turnVentOn();
-            return Response.ok().build();
+            return ventSwitch;
         }
-        else if (request.getStatus().equals("OFF")) {
+        else if (action.equals("OFF")) {
             Bathroom.getInstance().turnVentOff();
-            return Response.ok().build();
+            return ventSwitch;
         }
+
         return null;
     }
 
     @GET
-    @Path("/vent-switch")
+    @Path("/vent-switch")git 
     public VentSwitch switchVent() {
         VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
         
