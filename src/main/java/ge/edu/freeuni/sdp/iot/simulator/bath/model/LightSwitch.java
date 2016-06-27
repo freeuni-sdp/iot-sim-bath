@@ -1,7 +1,5 @@
 package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
-import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.MyJaxBean;
-
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
@@ -35,10 +33,10 @@ public class LightSwitch {
 
     private Response sendPostRequest(String status){
         WebTarget target = ClientBuilder.newClient().target(URI);
-        MyJaxBean jaxb = new MyJaxBean();
+        LightSwitchStatus jaxb = new LightSwitchStatus();
         jaxb.setHouseId(houseId);
         jaxb.setStatus(status);
-        Entity<MyJaxBean> lightEntity = Entity.entity(jaxb, MediaType.APPLICATION_JSON);
+        Entity<LightSwitchStatus> lightEntity = Entity.entity(jaxb, MediaType.APPLICATION_JSON);
 
         return target.request(MediaType.APPLICATION_JSON).post(lightEntity, Response.class);
     }

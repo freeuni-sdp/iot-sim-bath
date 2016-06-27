@@ -1,4 +1,4 @@
-package ge.edu.freeuni.sdp.iot.simulator.bath.jaxb;
+package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * Created by Babalah on 6/24/2016.
  */
 @XmlRootElement
-public class MyJaxBean {
+public class LightSwitchStatus {
     @XmlElement
     private String status;
     @XmlElement

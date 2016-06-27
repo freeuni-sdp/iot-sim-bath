@@ -1,7 +1,5 @@
 package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
-import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.MeasurementPostRequest;
-
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import java.util.concurrent.*;
@@ -12,7 +10,7 @@ public class HumiditySensor {
 
     private static final double NORMAL_HUMIDITY = 40.;
     private static final double MINIMUM_HUMIDITY = 15.;
-    private static final double MAXIMUM_HUMIDITY = 100.;
+    private static final double MAXIMUM_HUMIDITY = 85.;
     private static final double VENT_POWER = 0.5; //while vent is on, humidity decreases 0.4% per second
     private static final double LIGHT_POWER = 0.1; //while light is on, humidity increases 0.1% per second
     private static final double DRYER_POWER = 0.1; //while dryer is on, humidity increases 0.1% per second

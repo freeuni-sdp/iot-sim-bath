@@ -1,8 +1,7 @@
 package ge.edu.freeuni.sdp.iot.simulator.bath.service;
 
-import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.DryerSwitchPostRequest;
-import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.LightSwitchPostRequest;
-import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.VentSwitchPostRequest;
+import ge.edu.freeuni.sdp.iot.simulator.bath.model.DryerSwitchPostRequest;
+import ge.edu.freeuni.sdp.iot.simulator.bath.model.LightSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.VentSwitch;
 

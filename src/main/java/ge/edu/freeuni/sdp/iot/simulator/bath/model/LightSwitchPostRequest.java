@@ -1,23 +1,19 @@
-package ge.edu.freeuni.sdp.iot.simulator.bath.jaxb;
+package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- * Created by Giorgi on 27-Jun-16.
- */
-
 @XmlRootElement
-public class DryerSwitchPostRequest {
+public class LightSwitchPostRequest {
 
     @XmlElement
     private String status;
 
-    public void setStatus(String status) {
+    public void setStatus(String status){
         this.status = status;
     }
 
-    public String getStatus() {
+    public String getStatus(){
         return status;
     }
 }
