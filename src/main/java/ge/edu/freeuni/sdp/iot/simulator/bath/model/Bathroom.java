@@ -12,7 +12,10 @@ public class Bathroom {
             Bathroom.instance.setVentSwitch(new VentSwitch(TEST_HOUSE_ID));
             Bathroom.instance.setDryerSwitch(new DryerSwitch(TEST_HOUSE_ID));
 
-            Bathroom.instance.setHumiditySensor(new HumiditySensor(TEST_HOUSE_ID, instance.getLightSwitch(), instance.getVentSwitch()));
+            Bathroom.instance.setHumiditySensor(new HumiditySensor(TEST_HOUSE_ID,
+                     instance.getLightSwitch(),
+                     instance.getVentSwitch(),
+                     instance.getDryerSwitch()));
         }
         return Bathroom.instance;
     }
@@ -72,5 +75,9 @@ public class Bathroom {
 
     public LightSwitch getLightSwitch(){
         return lightSwitch;
+    }
+
+    public DryerSwitch getDryerSwitch() {
+        return dryerSwitch;
     }
 }
