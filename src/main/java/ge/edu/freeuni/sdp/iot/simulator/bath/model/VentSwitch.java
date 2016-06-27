@@ -9,13 +9,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * Created by khrak on 6/25/16.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@XmlRootElement
 public class VentSwitch {
-    @JsonProperty("status")
+
+    @XmlElement
     private String status;
 
-    @JsonProperty("houseid")
+    @XmlElement
     private String houseid;
+
+    @XmlElement
+    private boolean succeed = true;
 
     public VentSwitch(String houseid) {
         this.houseid = houseid;
