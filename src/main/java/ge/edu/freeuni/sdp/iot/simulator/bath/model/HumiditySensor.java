@@ -73,5 +73,4 @@ public class HumiditySensor {
 
         target.request(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(lastMeasurement));
     }
-
 }
