@@ -2,6 +2,7 @@ package ge.edu.freeuni.sdp.iot.simulator.bath.service;
 
 import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.LightSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
+import ge.edu.freeuni.sdp.iot.simulator.bath.model.VentSwitch;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -37,5 +38,13 @@ public class BathroomService {
             return Response.ok().build();
         }
         return null;
+    }
+
+    @GET
+    @Path("/vent-switch")
+    public VentSwitch switchVent() {
+        VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
+        
+        return ventSwitch;
     }
 }
