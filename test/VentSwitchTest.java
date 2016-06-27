@@ -12,7 +12,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 
-import static org.junit.Assert.assertEquals;
 
 public class VentSwitchTest extends JerseyTest {
 

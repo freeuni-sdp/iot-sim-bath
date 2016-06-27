@@ -9,8 +9,9 @@ public class Bathroom {
         if (Bathroom.instance == null) {
             Bathroom.instance = new Bathroom();
             Bathroom.instance.setLightSwitch(new LightSwitch(TEST_HOUSE_ID));
-            Bathroom.instance.setHumiditySensor(new HumiditySensor(TEST_HOUSE_ID));
             Bathroom.instance.setVentSwitch(new VentSwitch(TEST_HOUSE_ID));
+
+            Bathroom.instance.setHumiditySensor(new HumiditySensor(TEST_HOUSE_ID, instance.getLightSwitch(), instance.getVentSwitch()));
         }
         return Bathroom.instance;
     }
@@ -37,7 +38,6 @@ public class Bathroom {
 
     public void turnLightOn() {
         lightSwitch.lightOn();
-        humiditySensor.increaseHumidity();
     }
 
     public void turnLightOff() {
@@ -46,7 +46,6 @@ public class Bathroom {
 
     public void turnVentOn() {
         ventSwitch.ventOn();
-        humiditySensor.decreaseHumidity();
     }
 
     public void turnVentOff() {
@@ -59,5 +58,9 @@ public class Bathroom {
 
     public VentSwitch getVentSwitch() {
         return ventSwitch;
+    }
+
+    public LightSwitch getLightSwitch(){
+        return lightSwitch;
     }
 }
