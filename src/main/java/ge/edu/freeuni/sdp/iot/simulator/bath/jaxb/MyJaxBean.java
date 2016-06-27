@@ -8,6 +8,35 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class MyJaxBean {
-    @XmlElement public String status;
-    @XmlElement public String houseId;
+    @XmlElement
+    private String status;
+    @XmlElement
+    private String houseId;
+
+    @XmlElement
+    private String time;
+
+    public String getHouseId() {
+        return houseId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setHouseId(String houseId) {
+        this.houseId = houseId;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 }
