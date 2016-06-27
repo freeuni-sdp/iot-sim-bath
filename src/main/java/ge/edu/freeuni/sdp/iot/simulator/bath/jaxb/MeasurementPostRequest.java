@@ -5,14 +5,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class MeasurementPostRequest {
+
     @XmlElement
-    public double measurement;
+    public double humidity;
 
     public void setMeasurement(double measurement) {
-        this.measurement = measurement;
+        this.humidity = measurement;
     }
 
     public double getMeasurement() {
-        return measurement;
+        return humidity;
     }
 }
