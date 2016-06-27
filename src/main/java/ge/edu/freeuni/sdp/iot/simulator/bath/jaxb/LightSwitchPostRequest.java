@@ -5,6 +5,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class LightSwitchPostRequest {
+
     @XmlElement
-    public String status;
+    private String status;
+
+    public void setStatus(String status){
+        this.status = status;
+    }
+
+    public String getStatus(){
+        return status;
+    }
 }

@@ -6,29 +6,32 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 public class LightSwitch {
     private String houseId;
+
+    private static final String URI = "http://iot-bath-light-sensor.herokuapp.com/webapi/status/house/";
 
     public LightSwitch(String houseId) {
         this.houseId = houseId;
     }
 
-    public void lightOn() {
-        //TODO send post request to https://iot-bath-light-sensor.herokuapp.com/
-        WebTarget target = ClientBuilder.newClient().target("http://iot-bath-light-sensor.herokuapp.com/webapi/houses/" + houseId);
-        MyJaxBean jaxb = new MyJaxBean();
-        jaxb.houseId = houseId;
-        jaxb.status = "on";
-        target.request(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(jaxb));
+    public Response lightOn() {
+        return sendPostRequest("on");
     }
 
-    public void lightOff() {
-        //TODO send post request to https://iot-bath-light-sensor.herokuapp.com/
-        WebTarget target = ClientBuilder.newClient().target("http://iot-bath-light-sensor.herokuapp.com/webapi/houses/" + houseId);
+    public Response lightOff() {
+        return sendPostRequest("off");
+    }
+
+    private Response sendPostRequest(String status){
+        WebTarget target = ClientBuilder.newClient().target(URI + houseId);
         MyJaxBean jaxb = new MyJaxBean();
-        jaxb.houseId = houseId;
-        jaxb.status = "off";
-        target.request(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(jaxb));
+        jaxb.setHouseId(houseId);
+        jaxb.setStatus(status);
+        Entity<MyJaxBean> humEntity = Entity.entity(jaxb, MediaType.APPLICATION_JSON);
+
+        return target.request(MediaType.APPLICATION_JSON).post(humEntity, Response.class);
     }
 }
