@@ -27,7 +27,7 @@ public class LightSwitch {
     public Response lightOff() {
         Response response = sendPostRequest("off");
         if (response.getStatus() == Response.ok().build().getStatus())
-            isSwitchOn = true;
+            isSwitchOn = false;
         return response;
     }
 
