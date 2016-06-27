@@ -7,13 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class MeasurementPostRequest {
 
     @XmlElement
-    public double humidity;
+    private double humidity;
 
-    public void setMeasurement(double measurement) {
-        this.humidity = measurement;
+    public void setHumidity(double humidity) {
+        this.humidity = humidity;
     }
 
-    public double getMeasurement() {
+    public double getHumidity() {
         return humidity;
     }
 }
