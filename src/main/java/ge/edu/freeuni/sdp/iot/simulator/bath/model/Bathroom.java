@@ -3,7 +3,7 @@ package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 public class Bathroom {
 
     private static Bathroom instance;
-    public static String TEST_HOUSE_ID = "0";
+    public static String TEST_HOUSE_ID = "a1bc00fb-4724-476a-a553-d65d2c1bac0e";
 
     public static Bathroom getInstance() {
         if (instance == null) {
@@ -55,5 +55,9 @@ public class Bathroom {
 
     public String getStatus() {
         return ventSwitch.getStatus();
+    }
+
+    public VentSwitch getVentSwitch() {
+        return ventSwitch;
     }
 }

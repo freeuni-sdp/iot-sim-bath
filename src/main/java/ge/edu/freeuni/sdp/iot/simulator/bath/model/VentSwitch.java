@@ -1,10 +1,16 @@
 package ge.edu.freeuni.sdp.iot.simulator.bath.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Created by khrak on 6/25/16.
  */
+@XmlRootElement
 public class VentSwitch {
+    @XmlElement
     private String status;
+    @XmlElement
     private String houseid;
 
     public VentSwitch(String houseid) {
