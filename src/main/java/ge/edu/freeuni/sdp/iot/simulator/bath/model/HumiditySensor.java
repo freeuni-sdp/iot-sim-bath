@@ -4,6 +4,7 @@ import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.MeasurementPostRequest;
 
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.concurrent.*;
 
 public class HumiditySensor {
@@ -24,14 +25,11 @@ public class HumiditySensor {
         }
     };
 
-    private WebTarget target;
-
     public HumiditySensor(String houseId) {
         this.houseId = houseId;
         humidity = NORMAL_HUMIDITY;
         scheduler.scheduleAtFixedRate(measurementPoster, 0, POST_PERIOD, TimeUnit.SECONDS);
-
-        target = ClientBuilder.newClient().target("http://iot-bath-humidity-sensor.herokuapp.com/webapi/houses/" + houseId);
+        this.houseId = houseId;
     }
 
     public void increaseHumidity() {
@@ -69,8 +67,13 @@ public class HumiditySensor {
 
     public void postMeasurement() {
         MeasurementPostRequest lastMeasurement = new MeasurementPostRequest();
-        lastMeasurement.setMeasurement(humidity);
+        lastMeasurement.setHumidity(humidity);
 
-        target.request(MediaType.APPLICATION_JSON_TYPE).post(Entity.json(lastMeasurement));
+
+        WebTarget target = ClientBuilder.newClient().target("http://iot-bath-humidity-sensor.herokuapp.com/webapi/houses/" + houseId);
+
+        Entity<MeasurementPostRequest> measurementEntity = Entity.entity(lastMeasurement, MediaType.APPLICATION_JSON);
+        Response response = target.request(MediaType.APPLICATION_JSON).post(measurementEntity, Response.class);
+//        System.out.println(response.getStatus());
     }
 }
