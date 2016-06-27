@@ -30,18 +30,17 @@ public class BathroomService {
     @POST
     @Path("/vent-switch/{action}")
     public VentSwitch switchVent(@PathParam("action") String action) {
-        VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
 
         if (action.toLowerCase().equals("on")) {
             Bathroom.getInstance().turnVentOn();
-            return ventSwitch;
+            return Bathroom.getInstance().getVentSwitch();
         }
         else if (action.toLowerCase().equals("off")) {
             Bathroom.getInstance().turnVentOff();
-            return ventSwitch;
+            return Bathroom.getInstance().getVentSwitch();
         }
 
-        return ventSwitch;
+        return Bathroom.getInstance().getVentSwitch();
     }
 
     @GET
