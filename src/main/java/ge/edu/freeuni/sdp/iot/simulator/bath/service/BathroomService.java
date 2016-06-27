@@ -41,7 +41,7 @@ public class BathroomService {
             return ventSwitch;
         }
 
-        return null;
+        return ventSwitch;
     }
 
     @GET
