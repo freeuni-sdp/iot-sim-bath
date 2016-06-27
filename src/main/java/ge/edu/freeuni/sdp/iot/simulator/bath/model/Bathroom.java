@@ -20,7 +20,7 @@ public class Bathroom {
     private VentSwitch ventSwitch;
 
     private Bathroom() {
-
+        
     }
 
     private void setHumiditySensor(HumiditySensor humiditySensor) {

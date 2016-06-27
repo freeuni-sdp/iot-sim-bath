@@ -23,7 +23,7 @@ public class VentSwitch {
 
     public VentSwitch(String houseid) {
         this.houseid = houseid;
-        status = "sd";
+        status = "off";
         succeed = true;
     }
 
