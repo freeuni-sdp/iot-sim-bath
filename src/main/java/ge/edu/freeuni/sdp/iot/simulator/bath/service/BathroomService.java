@@ -1,6 +1,7 @@
 package ge.edu.freeuni.sdp.iot.simulator.bath.service;
 
 import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.LightSwitchPostRequest;
+import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.VentSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 
 import javax.ws.rs.*;
@@ -27,7 +28,7 @@ public class BathroomService {
 
     @POST
     @Path("/vent-switch")
-    public Response switchVent(final LightSwitchPostRequest request) {
+    public Response switchVent(final VentSwitchPostRequest request) {
         if (request.getStatus().equals("ON")) {
             Bathroom.getInstance().turnVentOn();
             return Response.ok().build();
