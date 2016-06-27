@@ -45,7 +45,7 @@ public class BathroomService {
     }
 
     @GET
-    @Path("/vent-switch")git 
+    @Path("/vent-switch")
     public VentSwitch switchVent() {
         VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
         
