@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 public class LightSwitch {
     private String houseId;
 
-    private static final String URI = "http://iot-bath-light-sensor.herokuapp.com/webapi/status/house/";
+    private static final String URI = "http://iot-bath-light-sensor.herokuapp.com/webapi/status/";
 
     public LightSwitch(String houseId) {
         this.houseId = houseId;
@@ -26,12 +26,12 @@ public class LightSwitch {
     }
 
     private Response sendPostRequest(String status){
-        WebTarget target = ClientBuilder.newClient().target(URI + houseId);
+        WebTarget target = ClientBuilder.newClient().target(URI);
         MyJaxBean jaxb = new MyJaxBean();
         jaxb.setHouseId(houseId);
         jaxb.setStatus(status);
-        Entity<MyJaxBean> humEntity = Entity.entity(jaxb, MediaType.APPLICATION_JSON);
+        Entity<MyJaxBean> lightEntity = Entity.entity(jaxb, MediaType.APPLICATION_JSON);
 
-        return target.request(MediaType.APPLICATION_JSON).post(humEntity, Response.class);
+        return target.request(MediaType.APPLICATION_JSON).post(lightEntity, Response.class);
     }
 }
