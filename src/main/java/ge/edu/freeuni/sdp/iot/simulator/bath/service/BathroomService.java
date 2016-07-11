@@ -2,7 +2,6 @@ package ge.edu.freeuni.sdp.iot.simulator.bath.service;
 
 
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.DryerSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.LightSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
@@ -33,7 +32,6 @@ public class BathroomService {
     @POST
     @Path("/vent-switch/")
     public VentSwitch switchVent(String action) {
-
 
         if (action.toLowerCase().equals("on")) {
             Bathroom.getInstance().turnVentOn();

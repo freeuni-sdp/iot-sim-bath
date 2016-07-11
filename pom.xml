@@ -92,7 +92,6 @@
 			<artifactId>jersey-media-json-jackson</artifactId>
 		</dependency>
 
-
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -124,10 +123,11 @@
 			<artifactId>jackson-core</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+
 		<dependency>
-			<groupId>ge.edu.freeuni.sdp.iot.simulator.bath</groupId>
-			<artifactId>iot-sim-bath</artifactId>
-			<version>1.0</version>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160212</version>
 		</dependency>
 
 
