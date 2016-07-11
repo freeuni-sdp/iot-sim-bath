@@ -28,8 +28,8 @@ public class BathroomService {
     }
 
     @POST
-    @Path("/vent-switch/{action}")
-    public VentSwitch switchVent(@PathParam("action") String action) {
+    @Path("/vent-switch/")
+    public VentSwitch switchVent(String action) {
 
         if (action.toLowerCase().equals("on")) {
             Bathroom.getInstance().turnVentOn();
