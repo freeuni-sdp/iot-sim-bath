@@ -7,7 +7,6 @@ import ge.edu.freeuni.sdp.iot.simulator.bath.model.DryerSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.LightSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.VentSwitch;
-import org.json.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -35,15 +34,12 @@ public class BathroomService {
     @Path("/vent-switch/")
     public VentSwitch switchVent(String action) {
 
-        JSONObject json = new JSONObject(action);
 
-        String status = json.getString("set_status");
-
-        if (status.toLowerCase().equals("on")) {
+        if (action.toLowerCase().equals("on")) {
             Bathroom.getInstance().turnVentOn();
             return Bathroom.getInstance().getVentSwitch();
         }
-        else if (status.toLowerCase().equals("off")) {
+        else if (action.toLowerCase().equals("off")) {
             Bathroom.getInstance().turnVentOff();
             return Bathroom.getInstance().getVentSwitch();
         }
