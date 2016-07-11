@@ -1,4 +1,4 @@
-import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.LightSwitchPostRequest;
+import ge.edu.freeuni.sdp.iot.simulator.bath.model.LightSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.service.BathroomService;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;

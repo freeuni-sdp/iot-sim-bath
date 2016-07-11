@@ -1,5 +1,5 @@
 
-import ge.edu.freeuni.sdp.iot.simulator.bath.jaxb.VentSwitchPostRequest;
+import ge.edu.freeuni.sdp.iot.simulator.bath.model.VentSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.service.BathroomService;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
@@ -12,7 +12,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 
-import static org.junit.Assert.assertEquals;
 
 public class VentSwitchTest extends JerseyTest {
 
