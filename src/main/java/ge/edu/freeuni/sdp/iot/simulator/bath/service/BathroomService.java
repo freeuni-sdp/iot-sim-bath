@@ -34,7 +34,6 @@ public class BathroomService {
     @Path("/vent-switch/")
     public VentSwitch switchVent(String action) {
 
-        System.out.println(action + " is body");
         JSONObject json = new JSONObject(action);
         String state = json.getString("set_status");
 
