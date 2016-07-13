@@ -1,11 +1,12 @@
 package ge.edu.freeuni.sdp.iot.simulator.bath.service;
 
-import ge.edu.freeuni.sdp.iot.simulator.bath.model.DryerSwitchPostRequest;
+
+
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.LightSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.VentSwitch;
+import org.json.JSONObject;
 
-import javax.annotation.PostConstruct;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -29,14 +30,17 @@ public class BathroomService {
     }
 
     @POST
-    @Path("/vent-switch/{action}")
-    public VentSwitch switchVent(@PathParam("action") String action) {
+    @Path("/vent-switch/")
+    public VentSwitch switchVent(String action) {
 
-        if (action.toLowerCase().equals("on")) {
+        JSONObject json = new JSONObject(action);
+        String state = json.getString("set_status");
+
+        if (state.toLowerCase().equals("on")) {
             Bathroom.getInstance().turnVentOn();
             return Bathroom.getInstance().getVentSwitch();
         }
-        else if (action.toLowerCase().equals("off")) {
+        else if (state.toLowerCase().equals("off")) {
             Bathroom.getInstance().turnVentOff();
             return Bathroom.getInstance().getVentSwitch();
         }
@@ -50,24 +54,5 @@ public class BathroomService {
         VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
         
         return ventSwitch;
-    }
-
-    @POST
-    @Path("/dryer-switch")
-    public Response switchDryer(final DryerSwitchPostRequest request) {
-        if (request.getStatus().equals("ON")) {
-            Bathroom.getInstance().turnDryerOn();
-            return Response.ok().build();
-        }
-        else if (request.getStatus().equals("OFF")) {
-            Bathroom.getInstance().turnDryerOff();
-            return Response.ok().build();
-        }
-        return null;
-    }
-
-    @PostConstruct
-    public static void initialize() {
-        Bathroom.getInstance();
     }
 }

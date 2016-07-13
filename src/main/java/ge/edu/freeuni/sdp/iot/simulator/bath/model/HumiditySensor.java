@@ -22,7 +22,6 @@ public class HumiditySensor {
 
     private LightSwitch lightSwitch;
     private VentSwitch ventSwitch;
-    private DryerSwitch dryerSwitch;
 
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private final Runnable measurementPoster = new Runnable() {
@@ -32,7 +31,7 @@ public class HumiditySensor {
         }
     };
 
-    public HumiditySensor(String houseId, LightSwitch lightSwitch, VentSwitch ventSwitch, DryerSwitch dryerSwitch) {
+    public HumiditySensor(String houseId, LightSwitch lightSwitch, VentSwitch ventSwitch) {
         this.houseId = houseId;
         humidity = NORMAL_HUMIDITY;
         scheduler.scheduleAtFixedRate(measurementPoster, 0, POST_PERIOD, TimeUnit.SECONDS);
@@ -40,7 +39,6 @@ public class HumiditySensor {
 
         this.lightSwitch = lightSwitch;
         this.ventSwitch = ventSwitch;
-        this.dryerSwitch = dryerSwitch;
     }
 
     private void postMeasurement() {
@@ -60,9 +58,6 @@ public class HumiditySensor {
         }
         if (lightSwitch.isSwitchOn() && humidity < MAXIMUM_HUMIDITY){
             humidity += LIGHT_POWER*POST_PERIOD;
-        }
-        if (dryerSwitch.isOn() && humidity < MAXIMUM_HUMIDITY){
-            humidity += DRYER_POWER*POST_PERIOD;
         }
     }
 }

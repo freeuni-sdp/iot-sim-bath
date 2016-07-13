@@ -10,12 +10,10 @@ public class Bathroom {
             Bathroom.instance = new Bathroom();
             Bathroom.instance.setLightSwitch(new LightSwitch(TEST_HOUSE_ID));
             Bathroom.instance.setVentSwitch(new VentSwitch(TEST_HOUSE_ID));
-            Bathroom.instance.setDryerSwitch(new DryerSwitch(TEST_HOUSE_ID));
 
             Bathroom.instance.setHumiditySensor(new HumiditySensor(TEST_HOUSE_ID,
-                     instance.getLightSwitch(),
-                     instance.getVentSwitch(),
-                     instance.getDryerSwitch()));
+                    instance.getLightSwitch(),
+                    instance.getVentSwitch()));
         }
         return Bathroom.instance;
     }
@@ -23,7 +21,6 @@ public class Bathroom {
     private LightSwitch lightSwitch;
     private HumiditySensor humiditySensor;
     private VentSwitch ventSwitch;
-    private DryerSwitch dryerSwitch;
 
     private Bathroom() {
 
@@ -39,10 +36,6 @@ public class Bathroom {
 
     private void setVentSwitch(VentSwitch ventSwitch) {
         this.ventSwitch = ventSwitch;
-    }
-
-    private void setDryerSwitch(DryerSwitch dryerSwitch) {
-        this.dryerSwitch = dryerSwitch;
     }
 
     public void turnLightOn() {
@@ -61,23 +54,11 @@ public class Bathroom {
         ventSwitch.ventOff();
     }
 
-    public void turnDryerOn(){
-        dryerSwitch.set(true);
-    }
-
-    public void turnDryerOff(){
-        dryerSwitch.set(false);
-    }
-
     public VentSwitch getVentSwitch() {
         return ventSwitch;
     }
 
-    public LightSwitch getLightSwitch(){
+    public LightSwitch getLightSwitch() {
         return lightSwitch;
-    }
-
-    public DryerSwitch getDryerSwitch() {
-        return dryerSwitch;
     }
 }
