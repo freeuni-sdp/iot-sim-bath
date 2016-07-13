@@ -5,6 +5,7 @@ import ge.edu.freeuni.sdp.iot.simulator.bath.model.LightSwitchPostRequest;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.VentSwitch;
 
+import javax.annotation.PostConstruct;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -63,5 +64,10 @@ public class BathroomService {
             return Response.ok().build();
         }
         return null;
+    }
+
+    @PostConstruct
+    public static void initialize() {
+        Bathroom.getInstance();
     }
 }
