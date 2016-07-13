@@ -7,9 +7,11 @@ import ge.edu.freeuni.sdp.iot.simulator.bath.model.Bathroom;
 import ge.edu.freeuni.sdp.iot.simulator.bath.model.VentSwitch;
 import org.json.JSONObject;
 
+import javax.annotation.PostConstruct;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.concurrent.ScheduledExecutorService;
 
 @Path("/bath")
 @Produces({MediaType.APPLICATION_JSON})
@@ -54,5 +56,10 @@ public class BathroomService {
         VentSwitch ventSwitch = Bathroom.getInstance().getVentSwitch();
         
         return ventSwitch;
+    }
+
+    @PostConstruct
+    public static void init(){
+        Bathroom.getInstance();
     }
 }
